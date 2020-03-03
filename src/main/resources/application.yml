@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: simon-java-mp
+server:
+  port: 9999
+
+mp:
+  token: flowstone
+  appId: wxb1c4473c91444496
+  appSecret: f8d15ca6d1deab4aa1cffab40cfd025a
