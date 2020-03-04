@@ -8,3 +8,5 @@ mp:
   token: flowstone
   appId: wxb1c4473c91444496
   appSecret: f8d15ca6d1deab4aa1cffab40cfd025a
+base:
+  accessTokenUrl: https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={APPID}&secret={APPSECRET}

@@ -20,4 +20,8 @@ public class MpConfig {
 
     @Value("${mp.token}")
     private String token;
+
+
+    @Value("${base.accessTokenUrl}")
+    private String accessTokenUrl;
 }
