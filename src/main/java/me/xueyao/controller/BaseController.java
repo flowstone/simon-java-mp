@@ -37,7 +37,7 @@ public class BaseController {
         String accessToken = jsonObject.getString("access_token");
         if (null == accessToken) {
             log.warn("获取accessToken失败");
-            return R.ofSystem("获取accessToken");
+            return R.ofSystem("获取accessToken失败");
         }
 
         log.info("获取accessToken成功，accessToken = {}", accessToken);
