@@ -10,3 +10,5 @@ mp:
   appSecret: f8d15ca6d1deab4aa1cffab40cfd025a
 base:
   accessTokenUrl: https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={APPID}&secret={APPSECRET}
+  callbackIpUrl: https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token={ACCESS_TOKEN}
+  apiIpUrl: https://api.weixin.qq.com/cgi-bin/get_api_domain_ip?access_token={ACCESS_TOKEN}

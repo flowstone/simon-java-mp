@@ -12,12 +12,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter @Setter
-public class R {
+public class R<T> {
     private Integer code;
     private String message;
-    private Object data;
+    private T data;
 
-    public R(String msg, Object object) {
+    public R(String msg, T object) {
         this.message = msg;
         this.data = object;
     }
@@ -28,23 +28,30 @@ public class R {
     }
 
 
-    public static R ofParam(String msg) {
+    public T getData() {
+        return this.data;
+    }
+
+
+    public static <T> R<T> ofParam(String msg) {
         return new R(status.BAD_PARAM.getCode(), msg);
     }
 
-    public static R ofSuccess(String msg) {
+    public static <T> R<T> ofSuccess(String msg) {
         return new R(status.SUCCESS.getCode(), msg);
     }
 
-    public static R ofSuccess(String msg, Object data) {
+    public static <T> R<T> ofSuccess(String msg, T data) {
         return new R(status.SUCCESS.getCode(), msg, data);
     }
 
-    public static R ofSystem(String msg) {
+    public static <T> R<T> ofSystem(String msg) {
         return new R(status.SYSTEM.getCode(), msg);
     }
 
-
+    public boolean getSuccess() {
+        return status.SUCCESS.getCode().equals(this.code);
+    }
 
     @AllArgsConstructor
     @Getter

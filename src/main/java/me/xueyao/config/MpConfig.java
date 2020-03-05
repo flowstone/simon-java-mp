@@ -24,4 +24,10 @@ public class MpConfig {
 
     @Value("${base.accessTokenUrl}")
     private String accessTokenUrl;
+
+    @Value("${base.callbackIpUrl}")
+    private String callbackIpUrl;
+
+    @Value("${base.apiIpUrl}")
+    private String apiIpUrl;
 }

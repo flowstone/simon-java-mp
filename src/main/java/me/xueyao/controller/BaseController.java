@@ -27,8 +27,12 @@ public class BaseController {
     @Autowired
     private MpConfig mpConfig;
 
+    /**
+     * 获得唯一接口凭证
+     * @return
+     */
     @GetMapping("/getAccessToken")
-    public R getAccessToken() {
+    public R<String> getAccessToken() {
         Map<String, String> map = new HashMap<>(16);
         map.put("APPID", mpConfig.getAppId());
         map.put("APPSECRET", mpConfig.getAppSecret());
@@ -43,4 +47,61 @@ public class BaseController {
         log.info("获取accessToken成功，accessToken = {}", accessToken);
         return R.ofSuccess("获取accessToken成功", accessToken);
     }
+
+    /**
+     * 获得回调ip地址
+     * @return
+     */
+    @GetMapping("/getCallbackIp")
+    public R getCallbackIp() {
+        R<String> resultR = handleRequest(mpConfig.getCallbackIpUrl());
+        JSONObject jsonObject = JSONObject.parseObject(resultR.getData());
+        String errcode = jsonObject.getString("errcode");
+
+        if (null != errcode) {
+            log.warn("获取回调ip地址失败，{}", jsonObject);
+            return R.ofParam("获取回调ip地址失败");
+        }
+
+        log.info("获取回调ip地址成功，{}", jsonObject);
+        return R.ofSuccess("获取回调ip地址成功", jsonObject);
+    }
+
+    /**
+     * 获得API的IP列表
+     * @return
+     */
+    @GetMapping("/getApiIp")
+    public R getApiIp() {
+        R<String> resultR = handleRequest(mpConfig.getApiIpUrl());
+        JSONObject jsonObject = JSONObject.parseObject(resultR.getData());
+        String errcode = jsonObject.getString("errcode");
+
+        if (null != errcode) {
+            log.warn("获取AIP Ip地址失败，{}", jsonObject);
+            return R.ofParam("获取AIP Ip地址失败");
+        }
+
+        log.info("获取AIP Ip地址成功，{}", jsonObject);
+        return R.ofSuccess("获取AIP Ip地址成功", jsonObject);
+
+    }
+
+    /**
+     * 处理请求
+     * @return
+     */
+    public R<String> handleRequest(String url) {
+        R<String> accessTokenR = getAccessToken();
+        if (!accessTokenR.getSuccess()) {
+            return accessTokenR;
+        }
+
+        Map<String, String> map = new HashMap<>(16);
+        map.put("ACCESS_TOKEN", accessTokenR.getData());
+        String body = restTemplate.getForEntity(url, String.class, map).getBody();
+        return R.ofSuccess("处理结束", body);
+    }
+
+
 }
