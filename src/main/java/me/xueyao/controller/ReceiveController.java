@@ -1,6 +1,7 @@
 package me.xueyao.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import me.xueyao.enums.WxMpEnum;
 import me.xueyao.util.SignHelper;
 import me.xueyao.util.WxXmlUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,6 +70,9 @@ public class ReceiveController {
                 break;
             case "news":
                 break;
+            case "event":
+                resultXmlStr = subscribeMessage(map);
+                break;
             default:
                 map.put("Content", "该信息类型不支持");
                 resultXmlStr = textMessage(map);
@@ -135,4 +139,15 @@ public class ReceiveController {
         resultMap.put("CreateTime", map.get("CreateTime"));
         return resultMap;
     }
+
+    public String subscribeMessage(Map<String, String> map) throws Exception {
+        Map<String, String> resultMap = handleBaseMessage(map);
+        resultMap.put("MsgType", "text");
+        if (WxMpEnum.Event.subscribe.getMsg().equals(map.get("Event"))) {
+            resultMap.put("Content", "订阅公众号");
+        }
+        return WxXmlUtil.mapToXml(resultMap);
+    }
+
+
 }
