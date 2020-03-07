@@ -30,4 +30,19 @@ public class MpConfig {
 
     @Value("${base.apiIpUrl}")
     private String apiIpUrl;
+
+    @Value("${talk.serviceCenter.add}")
+    private String serviceCenterAdd;
+
+    @Value("${talk.serviceCenter.modify}")
+    private String serviceCenterModify;
+
+    @Value("${talk.serviceCenter.remove}")
+    private String serviceCenterRemove;
+
+    @Value("${talk.serviceCenter.list}")
+    private String serviceCenterList;
+
+    @Value("${talk.serviceCenter.sendMessage}")
+    private String serviceCenterSendMessage;
 }
