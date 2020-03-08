@@ -33,3 +33,5 @@ talk:
   media:
     upload: https://api.weixin.qq.com/cgi-bin/media/upload?access_token=
     list: https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token={ACCESS_TOKEN}
+  template:
+    send: https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={ACCESS_TOKEN}

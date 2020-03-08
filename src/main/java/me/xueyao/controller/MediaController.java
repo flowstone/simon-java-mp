@@ -43,7 +43,7 @@ public class MediaController {
     public R uploadImage(@RequestParam("media") MultipartFile media,
                          @RequestParam("type") String type) throws IOException {
         if (media.isEmpty()) {
-            return R.ofParam("图片必传");
+            return R.ofParam("媒体类型必传");
         }
         R<String> accessTokenR = baseController.getAccessToken();
         if (!accessTokenR.getSuccess()) {

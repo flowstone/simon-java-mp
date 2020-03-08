@@ -91,4 +91,8 @@ public class MpConfig {
 
     @Value("${talk.media.list}")
     private String mediaList;
+
+    @Value("${talk.template.send}")
+    private String templateSend;
+
 }
