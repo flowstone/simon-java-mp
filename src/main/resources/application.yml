@@ -35,3 +35,8 @@ talk:
     list: https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token={ACCESS_TOKEN}
   template:
     send: https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={ACCESS_TOKEN}
+  userTag:
+    create: https://api.weixin.qq.com/cgi-bin/tags/create?access_token={ACCESS_TOKEN}
+    get: https://api.weixin.qq.com/cgi-bin/tags/get?access_token={ACCESS_TOKEN}
+    update: https://api.weixin.qq.com/cgi-bin/tags/update?access_token={ACCESS_TOKEN}
+    delete: https://api.weixin.qq.com/cgi-bin/tags/delete?access_token={ACCESS_TOKEN}

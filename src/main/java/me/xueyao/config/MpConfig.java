@@ -92,7 +92,25 @@ public class MpConfig {
     @Value("${talk.media.list}")
     private String mediaList;
 
+    /**
+     * -------------模板管理--------------
+     */
     @Value("${talk.template.send}")
     private String templateSend;
+
+    /**
+     * 用户标签管理
+     */
+    @Value("${talk.userTag.create}")
+    private String userTagCreate;
+
+    @Value("${talk.userTag.get}")
+    private String userTagGet;
+
+    @Value("${talk.userTag.update}")
+    private String userTagUpdate;
+
+    @Value("${talk.userTag.delete}")
+    private String userTagDelete;
 
 }
