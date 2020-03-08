@@ -31,6 +31,9 @@ public class MpConfig {
     @Value("${base.apiIpUrl}")
     private String apiIpUrl;
 
+    /**
+     * --------- 客服中心 ---------
+     */
     @Value("${talk.serviceCenter.add}")
     private String serviceCenterAdd;
 
@@ -45,4 +48,47 @@ public class MpConfig {
 
     @Value("${talk.serviceCenter.sendMessage}")
     private String serviceCenterSendMessage;
+
+    /**
+     * ------------- 群发消息 ------------
+     */
+
+    @Value("${talk.batchSend.uploadImg}")
+    private String uploadImage;
+
+    @Value("${talk.batchSend.uploadnews}")
+    private String uploadNews;
+
+    @Value("${talk.batchSend.sendAllToTag}")
+    private String sendAllToTag;
+
+    @Value("${talk.batchSend.sendOpenId}")
+    private String sendOpenId;
+
+    @Value("${talk.batchSend.uploadVideo}")
+    private String uploadVideo;
+
+    @Value("${talk.batchSend.delete}")
+    private String delete;
+
+    @Value("${talk.batchSend.preview}")
+    private String preview;
+
+    @Value("${talk.batchSend.getSendStatus}")
+    private String getSendStatus;
+
+    @Value("${talk.batchSend.getSendSpeed}")
+    private String getSendSpeed;
+
+    @Value("${talk.batchSend.setSendSpeed}")
+    private String setSendSpeed;
+
+    /**
+     * -------------素材管理----------------
+     */
+    @Value("${talk.media.upload}")
+    private String mediaUpload;
+
+    @Value("${talk.media.list}")
+    private String mediaList;
 }

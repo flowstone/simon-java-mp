@@ -19,3 +19,17 @@ talk:
     remove: https://api.weixin.qq.com/customservice/kfaccount/del?access_token=
     list: https://api.weixin.qq.com/cgi-bin/customservice/getkflist?access_token=
     sendMessage: https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=
+  batchSend:
+    uploadImg: https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token=
+    uploadnews: https://api.weixin.qq.com/cgi-bin/media/uploadnews?access_token={ACCESS_TOKEN}
+    sendAllToTag: https://api.weixin.qq.com/cgi-bin/message/mass/sendall?access_token={ACCESS_TOKEN}
+    sendOpenId: https://api.weixin.qq.com/cgi-bin/message/mass/send?access_token={ACCESS_TOKEN}
+    uploadVideo: https://api.weixin.qq.com/cgi-bin/media/uploadvideo?access_token={ACCESS_TOKEN}
+    delete: https://api.weixin.qq.com/cgi-bin/message/mass/delete?access_token={ACCESS_TOKEN}
+    preview: https://api.weixin.qq.com/cgi-bin/message/mass/preview?access_token={ACCESS_TOKEN}
+    getSendStatus: https://api.weixin.qq.com/cgi-bin/message/mass/get?access_token={ACCESS_TOKEN}
+    getSendSpeed: https://api.weixin.qq.com/cgi-bin/message/mass/speed/get?access_token={ACCESS_TOKEN}
+    setSendSpeed:  https://api.weixin.qq.com/cgi-bin/message/mass/speed/set?access_token={ACCESS_TOKEN}
+  media:
+    upload: https://api.weixin.qq.com/cgi-bin/media/upload?access_token=
+    list: https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token={ACCESS_TOKEN}
