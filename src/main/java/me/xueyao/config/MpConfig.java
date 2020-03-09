@@ -122,4 +122,7 @@ public class MpConfig {
     @Value("${talk.user.getBaseInfo}")
     private String getUserBaseInfo;
 
+    @Value("${talk.user.list}")
+    private String userList;
+
 }

@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import me.xueyao.base.R;
 import me.xueyao.config.MpConfig;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -53,5 +54,31 @@ public class UserController {
 
         log.info("获取用户基本信息成功，{}", resultJson);
         return R.ofSuccess("获取用户基本信息成功", resultJson);
+    }
+
+    /**
+     * 获取用户列表
+     * @return
+     */
+    @GetMapping("/userList")
+    public R userList() {
+        R<String> accessTokenR = baseController.getAccessToken();
+        if (!accessTokenR.getSuccess()) {
+            return accessTokenR;
+        }
+
+        Map<String, String> param = new HashMap<>(16);
+        param.put("ACCESS_TOKEN", accessTokenR.getData());
+
+        String resultStr = restTemplate.getForEntity(mpConfig.getUserList(), String.class, param).getBody();
+        JSONObject resultJson = JSONObject.parseObject(resultStr);
+        String errcode = resultJson.getString("errcode");
+        if (!StringUtils.isEmpty(errcode)) {
+            log.warn("获取用户列表失败，{}", resultJson);
+            return R.ofParam("获取用户列表失败");
+        }
+
+        log.info("获取用户列表成功，{}", resultJson);
+        return R.ofSuccess("获取用户列表成功", resultJson);
     }
 }
