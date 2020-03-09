@@ -113,4 +113,13 @@ public class MpConfig {
     @Value("${talk.userTag.delete}")
     private String userTagDelete;
 
+    /**
+     * -------------用户备注----------
+     */
+    @Value("${talk.userRemark.update}")
+    private String userRemarkUpdate;
+
+    @Value("${talk.user.getBaseInfo}")
+    private String getUserBaseInfo;
+
 }
