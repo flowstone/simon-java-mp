@@ -141,4 +141,13 @@ public class MpConfig {
     @Value("${talk.shortUrl}")
     private String shortUrl;
 
+    /**
+     * -----------创建菜单 -----
+     */
+
+    @Value("${talk.menu.create}")
+    private String menuCreate;
+
+
+
 }
