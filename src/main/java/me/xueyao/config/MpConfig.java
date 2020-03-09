@@ -134,4 +134,11 @@ public class MpConfig {
     @Value("${talk.qrCode.createEver}")
     private String qrCodeCreateEver;
 
+    /**
+     * ----------短链接生成-------
+     */
+
+    @Value("${talk.shortUrl}")
+    private String shortUrl;
+
 }

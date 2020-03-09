@@ -48,3 +48,4 @@ talk:
   qrCode:
     create: https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token={ACCESS_TOKEN}
     createEver: https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token={ACCESS_TOKEN}
+  shortUrl: https://api.weixin.qq.com/cgi-bin/shorturl?access_token={ACCESS_TOKEN}
