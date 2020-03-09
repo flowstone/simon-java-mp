@@ -125,4 +125,13 @@ public class MpConfig {
     @Value("${talk.user.list}")
     private String userList;
 
+    /**
+     * --------- 二维码 -------
+     */
+    @Value("${talk.qrCode.create}")
+    private String qrCodeCreate;
+
+    @Value("${talk.qrCode.createEver}")
+    private String qrCodeCreateEver;
+
 }

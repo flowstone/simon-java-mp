@@ -45,3 +45,6 @@ talk:
   user:
     getBaseInfo: https://api.weixin.qq.com/cgi-bin/user/info?access_token={ACCESS_TOKEN}&openid={OPENID}&lang=zh_CN
     list: https://api.weixin.qq.com/cgi-bin/user/get?access_token={ACCESS_TOKEN}&next_openid=
+  qrCode:
+    create: https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token={ACCESS_TOKEN}
+    createEver: https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token={ACCESS_TOKEN}
