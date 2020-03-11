@@ -22,7 +22,7 @@ import java.util.Map;
 public class UserTagController {
 
     @Autowired
-    private BaseController baseControllero;
+    private BaseController baseController;
     @Autowired
     private MpConfig mpConfig;
     @Autowired
@@ -102,7 +102,7 @@ public class UserTagController {
 
 
     public R<Map<String, String>> handleMap() {
-        R<String> accessTokenR = baseControllero.getAccessToken();
+        R<String> accessTokenR = baseController.getAccessToken();
         if (!accessTokenR.getSuccess()) {
             return R.ofParam(accessTokenR.getMessage());
         }
